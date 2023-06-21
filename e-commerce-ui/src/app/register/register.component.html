@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Registerations</h1>
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> You added to database Successfully.
+        <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+    </div>
+    <form [formGroup]="addUser" (ngSubmit)="collection()">
+        <div class="mb-3">
+            <label class="form-label">First Name</label>
+            <input type="text" style="width:500px;" class="form-control" placeholder="Enter first name"
+                formControlName="firstN">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Last Name:</label>
+            <input type="text" style="width:500px;" class="form-control" placeholder="Enter last name"
+                formControlName="lastN">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">User Name</label>
+            <input type="email" style="width:500px;" class="form-control" placeholder="email" formControlName="email">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password:</label>
+            <input type="password" style="width:500px;" class="form-control" placeholder="password"
+                formControlName="password">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Confirm Password:</label>
+            <input type="password" style="width:500px;" class="form-control" placeholder="password"
+                formControlName="cPassword">
+        </div>
+        
+        <button type="submit" mat-stroked-button class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+    <a routerLink="/login">already have an account?</a>
+</div>
